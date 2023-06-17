@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% block css %}
+<style>
+    /* Custom CSS styles */
+    body {
+        background-color: #f8f9fa;
+    }
+
+    .container {
+        padding-top: 40px;
+    }
+
+    .room-card {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .hori,
+    .room-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .room-card .card-img-top {
+        border-radius: 10px 10px 0 0;
+    }
+
+    .room-card .card-body {
+        padding: 20px;
+    }
+
+    .room-card .card-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .room-card .card-text {
+        color: #6c757d;
+    }
+
+    .room-card .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        transition: background-color 0.3s ease;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <h1 class="text-center">Rooms Details</h1>
+    <div class="row">
+        <div class="hori card text-center">
+            <div class="card-header">
+                {{firm_data.name}} {{firm_data.business_type}}
+            </div>
+            <div class="card-body">
+                <table class="table table-success table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">SNo.</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">AC Room</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Non-AC Room</th>
+                            <th scope="col">Price</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Single</td>
+                            <td>{{business_details.single_ac}}</td>
+                            <td>{{business_details.single_ac_price}}</td>
+
+                            <td>{{business_details.single_non_ac}}</td>
+                            <td>{{business_details.single_non_ac_price}}</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Double</td>
+                            <td>{{business_details.double_ac}}</td>
+                            <td>{{business_details.double_ac_price}}</td>
+
+                            <td>{{business_details.double_non_ac}}</td>
+                            <td>{{business_details.double_non_ac_price}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div>
+                <div class="card-footer d-flex mb-2">
+                    <div class="m-1"><b>Email:</b> {{business_details.email}}</div>
+                    <div class="m-1"><b>Mobile:</b> {{business_details.mobile}}</div>
+                    <div class="m-1"><b>Phone:</b> {{business_details.phone}}</div>
+                </div>
+
+                <div class="d-flex mb-2">
+                    <div class="m-1"><b>Address:</b> {{business_details.address}}</div>
+                    <div class="m-1"><b>Landmark:</b> {{business_details.landmark}}</div>
+                    <div class="m-1"><b>City:</b> {{business_details.city}}</div>
+                    <div class="m-1"><b>State:</b> {{business_details.state}}</div>
+                    <div class="m-1"><b>Country:</b> {{business_details.country}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}
