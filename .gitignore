@@ -33,7 +33,7 @@ env/
 *.sql
 *.db
 *.sqlite
-# *.sqlite3
+*.sqlite3
 
 # Ignore sensitive information
 secrets.json
