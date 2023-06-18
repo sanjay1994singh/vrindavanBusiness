@@ -28,6 +28,7 @@ env/
 .idea/
 *.pydevproject
 
+
 # Ignore database connection information
 *.bak
 *.sql
