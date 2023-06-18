@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'homepage',
     'business',
+    'store',
+    'temple',
+    'adhyatm',
 ]
 
 MIDDLEWARE = [
