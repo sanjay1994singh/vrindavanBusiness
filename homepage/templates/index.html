@@ -1,16 +1,7 @@
 {% extends 'base.html' %}
-
+{% block title %}Home page {% endblock %}
 {% block css %}
 <style>
-    /* Custom CSS styles */
-    body {
-        background-color: #f8f9fa;
-    }
-
-    .container {
-        padding-top: 40px;
-    }
-
     .room-card {
         background-color: #ffffff;
         border-radius: 10px;
@@ -58,9 +49,11 @@
             <h5 class="card-header">Featured</h5>
             <div class="d-flex mx-auto">
                 <div class="col-lg-3">
-                    <img src="{{business.main_img.url}}" class="card-img-top img-fluid" alt="Room 1">
+                    <div class="p-4">
+                        <img src="{{business.main_img.url}}" class="card-img-top" alt="Room 1">
+                    </div>
                 </div>
- 
+
                 <div class="card-body text-center col-lg-3">
                     <h5 class="card-title">{{business.name}} {{business.business_type}}</h5>
                     <p class="card-text"><b>Address:</b> {{business.address}}</p>
@@ -70,44 +63,18 @@
 
                 <div class="card-body text-center col-lg-3">
                     <p class="card-text"><b>Mobile:</b> {{business.mobile}} <b>Phone:</b> {{business.phone}}</p>
-                    <p class="card-text"><b>Email:</b> {{business.email}} &nbsp; &nbsp; &nbsp; &nbsp;<a href="{{business.weblink}}" target="_blank">Website</a></p>
-                    <a href="/visiting/{{business.id}}/" class="btn btn-sm btn-primary">Visite Now</a>&nbsp; &nbsp;
-                    <i class="fa fa-star-o" style="font-size:20px;color:black"></i>
-                    <i class="fa fa-star-o" style="font-size:20px;color:black"></i>
-                    <i class="fa fa-star-o" style="font-size:20px;color:black"></i>
-                    <i class="fa fa-star-o" style="font-size:20px;color:black"></i>
-                    <i class="fa fa-star-o" style="font-size:20px;color:black"></i>
-                </div>
-            </div>
-
-        </div>
-
-
-        <!-- <div class="col-lg-3">
-            <div class="card room-card d-flex">
-                <div>
-                    <img src="{{business.main_img.url}}" class="card-img-top img-fluid" alt="Room 1">
-                </div>
-
-                <div class="card-body">
-                    <h5 class="card-title">{{business.name}} {{business.business_type}}</h5>
-                    <p class="card-text"><b>Address:</b> {{business.address}}</p>
-                    <p class="card-text"><b>landmark:</b> {{business.landmark}}</p>
-                    <p class="card-text"><b>City:</b> {{business.city}}, {{business.state}}</p>
-                    <p class="card-text"><b>Mobile:</b> {{business.mobile}} <b>Phone:</b> {{business.phone}}</p>
                     <p class="card-text"><b>Email:</b> {{business.email}} &nbsp; &nbsp; &nbsp; &nbsp;<a
                             href="{{business.weblink}}" target="_blank">Website</a></p>
-                    <div>
-                        <a href="/visiting/{{business.id}}/" class="btn btn-primary">Visite Now</a>&nbsp; &nbsp;
-                        <i class="fa fa-star-o" style="font-size:24px;color:black"></i>
-                        <i class="fa fa-star-o" style="font-size:24px;color:black"></i>
-                        <i class="fa fa-star-o" style="font-size:24px;color:black"></i>
-                        <i class="fa fa-star-o" style="font-size:24px;color:black"></i>
-                        <i class="fa fa-star-o" style="font-size:24px;color:black"></i>
-                    </div>
+                    <i class="fa fa-star-o" style="font-size:20px;color:black"></i>
+                    <i class="fa fa-star-o" style="font-size:20px;color:black"></i>
+                    <i class="fa fa-star-o" style="font-size:20px;color:black"></i>
+                    <i class="fa fa-star-o" style="font-size:20px;color:black"></i>
+                    <i class="fa fa-star-o" style="font-size:20px;color:black"></i><br>
+                    <a href="/visiting/{{business.id}}/" class="btn w-100 btn-primary">Visite Now</a>&nbsp; &nbsp;
+
                 </div>
             </div>
-        </div> -->
+        </div>
         {% endfor %}
     </div>
 </div>
