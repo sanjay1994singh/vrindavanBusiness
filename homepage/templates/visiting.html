@@ -61,7 +61,7 @@
                     <thead>
                         <tr>
                             <th scope="col">SNo.</th>
-                            <th scope="col">Type</th>
+                            <th scope="col">Room Type</th>
                             <th scope="col">AC Room</th>
                             <th scope="col">Price</th>
                             <th scope="col">Non-AC Room</th>
@@ -70,24 +70,150 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {% if business_details.is_single %}
                         <tr>
                             <th scope="row">1</th>
-                            <td>Single</td>
+                            <td>Single Bed</td>
                             <td>{{business_details.single_ac}}</td>
                             <td>{{business_details.single_ac_price}}</td>
 
                             <td>{{business_details.single_non_ac}}</td>
                             <td>{{business_details.single_non_ac_price}}</td>
                         </tr>
+                        {% endif %}
 
+                        {% if business_details.is_double %}
                         <tr>
                             <th scope="row">2</th>
-                            <td>Double</td>
+                            <td>Double Bed</td>
                             <td>{{business_details.double_ac}}</td>
                             <td>{{business_details.double_ac_price}}</td>
 
                             <td>{{business_details.double_non_ac}}</td>
                             <td>{{business_details.double_non_ac_price}}</td>
+                        </tr>
+                        {% endif %}
+
+                        {% if business_details.is_triple %}
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Triple Bed</td>
+                            <td>{{business_details.triple_ac}}</td>
+                            <td>{{business_details.triple_ac_price}}</td>
+
+                            <td>{{business_details.triple_non_ac}}</td>
+                            <td>{{business_details.triple_non_ac_price}}</td>
+                        </tr>
+                        {% endif %}
+
+                        {% if business_details.is_four %}
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Four Bed</td>
+                            <td>{{business_details.four_ac}}</td>
+                            <td>{{business_details.four_ac_price}}</td>
+
+                            <td>{{business_details.four_non_ac}}</td>
+                            <td>{{business_details.four_non_ac_price}}</td>
+                        </tr>
+                        {% endif %}
+
+                        {% if business_details.is_five %}
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Five Bed</td>
+                            <td>{{business_details.five_ac}}</td>
+                            <td>{{business_details.five_ac_price}}</td>
+
+                            <td>{{business_details.five_non_ac}}</td>
+                            <td>{{business_details.five_non_ac_price}}</td>
+                        </tr>
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
+
+            {% if business_details.is_hall %}
+            <div class="card-body">
+                <h1 class="text-center">Hall Details</h1>
+                <table class="table table-success table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">SNo.</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">AC Hall</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Non-AC Hall</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Capicity Member</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Hall</td>
+                            <td>{{business_details.hall_ac}}</td>
+                            <td>{{business_details.hall_ac_price}}</td>
+
+                            <td>{{business_details.hall_non_ac}}</td>
+                            <td>{{business_details.hall_non_ac_price}}</td>
+                            <td>{{business_details.hall_for}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            {% endif %}
+
+            {% if business_details.arrangement_for_katha %}
+            <div class="card-body">
+                <h1 class="text-center">Event</h1>
+                <table class="table table-success table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Katha</th>
+                            <th scope="col">Wedding</th>
+                            <th scope="col">Birthday</th>
+                            <th scope="col">Other</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <th scope="row">Capicity of People</th>
+                            <td>{{business_details.katha_people}}</td>
+                            <td>{{business_details.wedding_people}}</td>
+                            <td>{{business_details.birthday_people}}</td>
+                            <td>{{business_details.other_people}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            {% endif %}
+
+            <div class="card-body">
+                <h1 class="text-center">Other Facilities</h1>
+                <table class="table table-success table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Parking Area</th>
+                            <th scope="col">Restaurant</th>
+                            <th scope="col">Kitchen</th>
+                            <th scope="col">Taxi/Cab service</th>
+                            <th scope="col">Wifi</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <th scope="row"></th>
+                            <td>{{business_details.parking_address}}</td>
+                            <td>{% if business_details.restaurant %} Yes {% else %} No {% endif %}</td>
+                            <td>{% if business_details.kitchen %} Yes {% else %} No {% endif %}</td>
+                            <td>{% if business_details.taxi_service %} Yes {% else %} No {% endif %}</td>
+                            <td>May be Available</td>
                         </tr>
                     </tbody>
                 </table>
