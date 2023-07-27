@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}Home page {% endblock %}
+{% block title %}Home page{% endblock %}
 {% block css %}
 <style>
     .room-card {
@@ -9,8 +9,7 @@
         transition: transform 0.3s ease;
     }
 
-    .hori,
-    .room-card:hover {
+    .hori, .room-card:hover {
         transform: translateY(-5px);
     }
 
@@ -37,21 +36,24 @@
         border-color: #007bff;
         transition: background-color 0.3s ease;
     }
+    .text_style{
+        text-decoration: none;
+    }
+
+
 </style>
 {% endblock %}
 
 {% block content %}
 <div class="container-fluid">
-    <h3 class="text-center m-4">Welcome to vrindavan</h3>
     <div class="row">
-
         {% for business in business %}
         <div class="card col-lg-12 mb-2">
             <h5 class="card-header"></h5>
             <div class="d-flex">
                 <div class="col-lg-3">
                     <div class="m-4 p-4">
-                        <img src="{{business.main_img.url}}" class="card-img-top" alt="Room 1">
+                        <img alt="Room 1" class="card-img-top" src="{{business.main_img.url}}">
                     </div>
                 </div>
 
@@ -71,13 +73,13 @@
                     <i class="fa fa-star-o" style="font-size:20px;color:black"></i>
                     <i class="fa fa-star-o" style="font-size:20px;color:black"></i>
                     <i class="fa fa-star-o" style="font-size:20px;color:black"></i><br>
-                    <a href="/visiting/{{business.id}}/" class="btn w-100 btn-primary mt-4">Visite Now</a>&nbsp; &nbsp;
+                    <a class="btn w-100 btn-primary mt-4" href="/visiting/{{business.id}}/">Visite Now</a>&nbsp; &nbsp;
 
                 </div>
             </div>
         </div>
         {% endfor %}
-        
+
     </div>
 </div>
 {% endblock %}

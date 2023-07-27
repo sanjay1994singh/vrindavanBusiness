@@ -3,21 +3,24 @@ from django.db import models
 # Create your models here.
 class Temple(models.Model):
     name = models.CharField(max_length=500,null=True,unique=True)
-    add = models.TextField(null=True)
-    created_at = models.DateTimeField()
-    devi_devta = models.CharField(max_length=200,null=True)
-    sevayat_name = models.CharField(max_length=500,null=True)
-    mandir_prabandhak = models.CharField(max_length=1000,null=True)
-    darshan_time = models.CharField(max_length=50,null=True)
-    arti1_time = models.CharField(max_length=50,null=True)
-    arti2_time = models.CharField(max_length=50,null=True)
-    arti3_time = models.CharField(max_length=50,null=True)
-    arti4_time = models.CharField(max_length=50,null=True)
+    address = models.TextField(null=True)
+    deity = models.CharField(max_length=200,null=True)
+    sewayat_name = models.CharField(max_length=500,null=True)
+    mandir_manager = models.CharField(max_length=1000,null=True)
+    darshan_time_summer = models.CharField(max_length=50,null=True)
+    darshan_time_winter = models.CharField(max_length=50,null=True)
 
-    mobile = models.CharField(max_length=20,null=True)
-    phone = models.CharField(max_length=20,null=True)
-    email = models.EmailField(null=True)
-    
+    arti1 = models.CharField(max_length=50,null=True, blank=True)
+    arti2 = models.CharField(max_length=50,null=True, blank=True)
+    arti3 = models.CharField(max_length=50,null=True, blank=True)
+    arti4 = models.CharField(max_length=50,null=True, blank=True)
+
+    contact_number = models.CharField(max_length=20,null=True)
+    phone = models.CharField(max_length=20,null=True, blank=True)
+    email = models.EmailField(null=True, blank=True)
+    website = models.TextField(blank=True)
+    description = models.TextField(blank=True)
+
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

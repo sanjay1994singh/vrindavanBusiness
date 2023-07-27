@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% block title %}Home page{% endblock %}
+{% block css %}
+<style>
+    .room-card {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .hori, .room-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .room-card .card-img-top {
+        border-radius: 10px 10px 0 0;
+    }
+
+    .room-card .card-body {
+        padding: 20px;
+    }
+
+    .room-card .card-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .room-card .card-text {
+        color: #6c757d;
+    }
+
+    .room-card .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        transition: background-color 0.3s ease;
+    }
+    .text_style{
+        text-decoration: none;
+    }
+
+
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        {% for hospital in hospital %}
+        <div class="card col-lg-12 mb-2">
+            <h5 class="card-header"></h5>
+            <div class="d-flex">
+                <div class="col-lg-3 border">
+                    <img alt="Room 1" class="card-img-top" src="{{hospital.main_image.url}}">
+                </div>
+
+                <div class="card-body col-lg-3 border">
+                    <h5 class="card-title">{{hospital.name}} {{hospital.type}}</h5>
+                    <p class="card-text"><b>Address:</b> {{hospital.address}}</p>
+                    <p class="card-text"><b>Opening day:</b> {{hospital.opening_day}}</p>
+                    {% if emergency_cases %}
+                    <p class="card-text"><b>Emergency cases:</b> {{hospital.emergency_cases}}</p>
+                    <p class="card-text"><b>Emergency Time:</b> {{hospital.emergency_time}}</p>
+                    {% endif %}
+                    <p class="card-text"><b>Available Doctors:</b> {{hospital.available_doctors}}</p>
+                    <p class="card-text"><b>Hospital Specialized:</b> {{hospital.hospital_specialities}}</p>
+                </div>
+
+                <div class="card-body col-lg-3 border">
+
+
+                    <p class="card-text"><b>Appointment Contact Number:</b> {{hospital.appointment_contact_no}}</p>
+                    <p class="card-text"><b>Holiday:</b> {{hospital.holiday}}</p>
+                    <p class="card-text"><b>Hospital Contact Number:</b> {{hospital.hospital_contact_no}}</p>
+                    {% if hospital.email %}
+                    <p class="card-text"><b>Email:</b> {{hospital.email}}</p>
+                    {% endif %}
+
+                    {% if hospital.website %}
+                    <p class="card-text"><b>Website:</b>
+                        &nbsp; &nbsp; &nbsp; &nbsp;<a href="{{hospital.website}}" target="_blank">Website</a></p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+{% endblock %}

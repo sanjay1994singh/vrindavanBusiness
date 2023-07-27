@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'store',
     'temple',
     'adhyatm',
+    'health_service',
+    'education_sector',
 ]
 
 MIDDLEWARE = [
