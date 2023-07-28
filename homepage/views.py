@@ -36,6 +36,7 @@ def visiting(request, id):
 
 
 def hospital(request, id):
+    business_type = BusinessType.objects.all()
     health_type = HealthType.objects.all()
     hospital_data = HealthService.objects.filter(type_id=id)
     try:
@@ -45,6 +46,7 @@ def hospital(request, id):
         banner_img = ''
     context = {
         'banner_img': banner_img,
+        'business_type':business_type,
         'health_type': health_type,
         'hospital': hospital_data
     }
@@ -53,6 +55,7 @@ def hospital(request, id):
 
 
 def temple(request):
+    business_type = BusinessType.objects.all()
     health_type = HealthType.objects.all()
     temple = Temple.objects.all()
     try:
@@ -62,6 +65,7 @@ def temple(request):
         banner_img = ''
     context = {
         'banner_img': banner_img,
+        'business_type': business_type,
         'health_type': health_type,
         'temple': temple
     }
