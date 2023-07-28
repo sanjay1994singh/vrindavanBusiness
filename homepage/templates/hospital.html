@@ -56,23 +56,44 @@
                 </div>
 
                 <div class="card-body col-lg-3 border">
-                    <h5 class="card-title">{{hospital.name}} {{hospital.type}}</h5>
+                    <h5 class="card-title">{{hospital.name}}</h5>
                     <p class="card-text"><b>Address:</b> {{hospital.address}}</p>
+
+                    {% if hospital.opening_day %}
                     <p class="card-text"><b>Opening day:</b> {{hospital.opening_day}}</p>
-                    {% if emergency_cases %}
+                    {% endif %}
+
+                    {% if hospital.emergency_cases %}
                     <p class="card-text"><b>Emergency cases:</b> {{hospital.emergency_cases}}</p>
+                    {% endif %}
+
+                    {% if hospital.emergency_time %}
                     <p class="card-text"><b>Emergency Time:</b> {{hospital.emergency_time}}</p>
                     {% endif %}
+
+                    {% if hospital.available_doctors %}
                     <p class="card-text"><b>Available Doctors:</b> {{hospital.available_doctors}}</p>
-                    <p class="card-text"><b>Hospital Specialized:</b> {{hospital.hospital_specialities}}</p>
+                    {% endif %}
+
+                    {% if hospital.hospital_specialities %}
+                    <p class="card-text"><b>{{hospital.type}} Specialized:</b> {{hospital.hospital_specialities}}</p>
+                    {% endif %}
                 </div>
 
                 <div class="card-body col-lg-3 border">
 
-
+                    {% if hospital.appointment_contact_no %}
                     <p class="card-text"><b>Appointment Contact Number:</b> {{hospital.appointment_contact_no}}</p>
+                    {% endif %}
+
+                    {% if hospital.holiday %}
                     <p class="card-text"><b>Holiday:</b> {{hospital.holiday}}</p>
-                    <p class="card-text"><b>Hospital Contact Number:</b> {{hospital.hospital_contact_no}}</p>
+                    {% endif %}
+
+                    {% if hospital.hospital_contact_no %}
+                    <p class="card-text"><b>{{hospital.type}} Contact Number:</b> {{hospital.hospital_contact_no}}</p>
+                    {% endif %}
+
                     {% if hospital.email %}
                     <p class="card-text"><b>Email:</b> {{hospital.email}}</p>
                     {% endif %}

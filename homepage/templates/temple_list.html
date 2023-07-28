@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% block title %}Home page{% endblock %}
+{% block css %}
+<style>
+    .room-card {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .hori, .room-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .room-card .card-img-top {
+        border-radius: 10px 10px 0 0;
+    }
+
+    .room-card .card-body {
+        padding: 20px;
+    }
+
+    .room-card .card-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .room-card .card-text {
+        color: #6c757d;
+    }
+
+    .room-card .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        transition: background-color 0.3s ease;
+    }
+    .text_style{
+        text-decoration: none;
+    }
+
+
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        {% for temple in temple %}
+        <div class="card col-lg-12 mb-2">
+            <h5 class="card-header"></h5>
+            <div class="d-flex">
+                <div class="col-lg-3 border">
+                    <img alt="Room 1" class="card-img-top" src="{{hospital.main_image.url}}">
+                </div>
+
+                <div class="card-body col-lg-3 border">
+                    <h5 class="card-title">{{temple.name}}</h5>
+                    <p class="card-text"><b>Address:</b> {{temple.address}}</p>
+
+                    {% if temple.deity %}
+                    <p class="card-text"><b>Deity:</b> {{temple.deity}}</p>
+                    {% endif %}
+
+                    {% if temple.sewayat_name %}
+                    <p class="card-text"><b>Sewayat Name:</b> {{temple.sewayat_name}}</p>
+                    {% endif %}
+
+                    {% if temple.mandir_manager %}
+                    <p class="card-text"><b>Mandir Manager:</b> {{temple.mandir_manager}}</p>
+                    {% endif %}
+
+                    {% if temple.contact_number %}
+                    <p class="card-text"><b>Contact Number:</b> {{temple.contact_number}}</p>
+                    {% endif %}
+
+                    {% if temple.darshan_time_summer %}
+                    <p class="card-text"><b>Darshan time summer:</b> {{temple.darshan_time_summer}}</p>
+                    {% endif %}
+
+                    {% if temple.darshan_time_winter %}
+                    <p class="card-text"><b>Darshan time winter:</b> {{temple.darshan_time_winter}}</p>
+                    {% endif %}
+
+
+                </div>
+
+                <div class="card-body col-lg-3 border">
+
+                    {% if temple.arti1 %}
+                    <p class="card-text"><b>1st Aarti:</b> {{temple.arti1}}</p>
+                    {% endif %}
+
+                    {% if temple.arti2 %}
+                    <p class="card-text"><b>2nd Aarti:</b> {{temple.arti2}}</p>
+                    {% endif %}
+
+                    {% if temple.arti3 %}
+                    <p class="card-text"><b>3rd Aarti:</b> {{temple.arti3}}</p>
+                    {% endif %}
+
+                    {% if temple.arti4 %}
+                    <p class="card-text"><b>4rth Aarti:</b> {{temple.arti4}}</p>
+                    {% endif %}
+
+                    {% if temple.email %}
+                    <p class="card-text"><b>Email:</b> {{temple.email}}</p>
+                    {% endif %}
+
+                    {% if temple.website %}
+                    <p class="card-text"><b>Website:</b>
+                        &nbsp; &nbsp; &nbsp; &nbsp;<a href="{{hospital.website}}" target="_blank">View Website</a></p>
+                    {% endif %}
+
+                    {% if temple.email %}
+                    <p class="card-text"><b>Email</b> {{temple.email}}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+{% endblock %}
