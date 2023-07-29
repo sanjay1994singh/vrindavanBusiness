@@ -45,9 +45,12 @@
 {% endblock %}
 
 {% block content %}
+
 <div class="container-fluid">
     <div class="row">
+
         {% for business in business %}
+
         <div class="card col-lg-12 mb-2">
             <h5 class="card-header"></h5>
             <div class="d-flex">
@@ -66,13 +69,15 @@
 
                 <div class="card-body text-center col-lg-3">
                     <p class="card-text"><b>Mobile:</b> {{business.mobile}} <b>Phone:</b> {{business.phone}}</p>
-                    <p class="card-text"><b>Email:</b> {{business.email}} &nbsp; &nbsp; &nbsp; &nbsp;<a
-                            href="{{business.weblink}}" target="_blank">Website</a></p>
-                    <i class="fa fa-star-o" style="font-size:20px;color:black"></i>
-                    <i class="fa fa-star-o" style="font-size:20px;color:black"></i>
-                    <i class="fa fa-star-o" style="font-size:20px;color:black"></i>
-                    <i class="fa fa-star-o" style="font-size:20px;color:black"></i>
-                    <i class="fa fa-star-o" style="font-size:20px;color:black"></i><br>
+                    <p class="card-text"><b>Email:</b> {{business.email}} &nbsp; &nbsp; &nbsp; &nbsp;
+                        <a href="{{business.weblink}}" target="_blank">Website</a>
+                    </p>
+<!--                    <i class="fa fa-star-o" style="font-size:20px;color:black"></i>-->
+<!--                    <i class="fa fa-star-o" style="font-size:20px;color:black"></i>-->
+<!--                    <i class="fa fa-star-o" style="font-size:20px;color:black"></i>-->
+<!--                    <i class="fa fa-star-o" style="font-size:20px;color:black"></i>-->
+<!--                    <i class="fa fa-star-o" style="font-size:20px;color:black"></i>-->
+                    <br/>
                     <a class="btn w-100 btn-primary mt-4" href="/visiting/{{business.id}}/">Visite Now</a>&nbsp; &nbsp;
 
                 </div>
