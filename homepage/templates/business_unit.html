@@ -52,7 +52,7 @@
             <h5 class="card-header"></h5>
             <div class="d-flex">
                 <div class="col-lg-3 border">
-                    <img alt="Room 1" class="card-img-top" src="{{business_unite.main_image.url}}">
+                    <img alt="Room 1" class="card-img-top" src="{% if business_unite.main_image %}{{business_unite.main_image.url}}{% endif %}">
                 </div>
 
                 <div class="card-body col-lg-3 border">

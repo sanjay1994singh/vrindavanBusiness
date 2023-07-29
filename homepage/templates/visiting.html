@@ -129,6 +129,18 @@
                             <td>{{business_details.five_non_ac_price}}</td>
                         </tr>
                         {% endif %}
+
+                        {% if business_details.is_six %}
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Five Bed</td>
+                            <td>{{business_details.six_ac}}</td>
+                            <td>{{business_details.six_ac_price}}</td>
+
+                            <td>{{business_details.six_non_ac}}</td>
+                            <td>{{business_details.six_non_ac_price}}</td>
+                        </tr>
+                        {% endif %}
                     </tbody>
                 </table>
             </div>
