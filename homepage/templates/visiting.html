@@ -132,8 +132,8 @@
 
                         {% if business_details.is_six %}
                         <tr>
-                            <th scope="row">5</th>
-                            <td>Five Bed</td>
+                            <th scope="row">6</th>
+                            <td>Six Bed</td>
                             <td>{{business_details.six_ac}}</td>
                             <td>{{business_details.six_ac_price}}</td>
 
@@ -141,6 +141,55 @@
                             <td>{{business_details.six_non_ac_price}}</td>
                         </tr>
                         {% endif %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-body mx-auto">
+                <div class="d-flex">
+                    <div class="col-lg-3">
+                        <img src="{% if business_details.room_img1 %}{{business_details.room_img1.url}}{% endif %}" class="m-2" height="150" >
+                    </div>
+
+                    <div class="col-lg-3">
+                        <img src="{% if business_details.room_img2 %}{{business_details.room_img2.url}}{% endif %}" class="m-2" height="150" >
+                    </div>
+
+                    <div class="col-lg-3">
+                        <img src="{% if business_details.room_img3 %}{{business_details.room_img3.url}}{% endif %}" class="m-2" height="150" >
+                    </div>
+
+                    <div class="col-lg-3">
+                        <img src="{% if business_details.room_img4 %}{{business_details.room_img4.url}}{% endif %}" class="m-2" height="150" >
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-body">
+                <h1 class="text-center">Room Facilities</h1>
+                <table class="table table-success table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">intercome</th>
+                            <th scope="col">Room service</th>
+                            <th scope="col">Power backup ac</th>
+                            <th scope="col">Power backup fan</th>
+                            <th scope="col">Hot water</th>
+                            <th scope="col">Room tv</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <th scope="row"></th>
+                            <td>{% if business_details.intercome %} Yes {% else %} No {% endif %}</td>
+                            <td>{% if business_details.room_service %} Yes {% else %} No {% endif %}</td>
+                            <td>{% if business_details.power_backup_ac %} Yes {% else %} No {% endif %}</td>
+                            <td>{% if business_details.power_backup_fan %} Yes {% else %} No {% endif %}</td>
+                            <td>{% if business_details.hot_water %} Yes {% else %} No {% endif %}</td>
+                            <td>{% if business_details.room_tv %} Yes {% else %} No {% endif %}</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
