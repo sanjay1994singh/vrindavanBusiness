@@ -9,7 +9,7 @@ class Temple(models.Model):
     mandir_manager = models.CharField(max_length=1000,null=True)
     darshan_time_summer = models.CharField(max_length=50,null=True)
     darshan_time_winter = models.CharField(max_length=50,null=True)
-
+    main_img = models.ImageField(upload_to='temple_image',null=True,default=None)
     arti1 = models.CharField(max_length=50,null=True, blank=True)
     arti2 = models.CharField(max_length=50,null=True, blank=True)
     arti3 = models.CharField(max_length=50,null=True, blank=True)
