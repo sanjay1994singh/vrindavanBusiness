@@ -57,8 +57,9 @@
                             Business unit
                         </a>
                         <ul aria-labelledby="navbarDropdown" class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            {% for store_type in store_type %}
+                            <li><a class="dropdown-item" href="/business-unite/{{store_type.id}}/">{{store_type.type}}</a></li>
+                            {% endfor %}
                         </ul>
                     </li>
 

@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% block title %}Home page{% endblock %}
+{% block css %}
+<style>
+    .room-card {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .hori, .room-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .room-card .card-img-top {
+        border-radius: 10px 10px 0 0;
+    }
+
+    .room-card .card-body {
+        padding: 20px;
+    }
+
+    .room-card .card-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .room-card .card-text {
+        color: #6c757d;
+    }
+
+    .room-card .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        transition: background-color 0.3s ease;
+    }
+    .text_style{
+        text-decoration: none;
+    }
+
+
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        {% for business_unite in business_unite %}
+        <div class="card col-lg-12 mb-2">
+            <h5 class="card-header"></h5>
+            <div class="d-flex">
+                <div class="col-lg-3 border">
+                    <img alt="Room 1" class="card-img-top" src="{{business_unite.main_image.url}}">
+                </div>
+
+                <div class="card-body col-lg-3 border">
+                    <h5 class="card-title">{{business_unite.store_name}}</h5>
+                    <p class="card-text"><b>Address:</b> {{business_unite.address}}</p>
+
+                    {% if business_unite.contact_number %}
+                    <p class="card-text"><b>Contact Number:</b> {{business_unite.contact_number}}</p>
+                    {% endif %}
+
+                    {% if business_unite.phone %}
+                    <p class="card-text"><b>Phone Number:</b> {{business_unite.phone}}</p>
+                    {% endif %}
+
+                    {% if business_unite.darshan_time_summer %}
+                    <p class="card-text"><b>Darshan time summer:</b> {{business_unite.darshan_time_summer}}</p>
+                    {% endif %}
+
+                    {% if business_unite.darshan_time_winter %}
+                    <p class="card-text"><b>Darshan time winter:</b> {{business_unite.darshan_time_winter}}</p>
+                    {% endif %}
+
+
+                </div>
+
+                <div class="card-body col-lg-3 border">
+
+                    {% if business_unite.timing_from1 %}
+                    <p class="card-text">Open <b>From</b> : <span>{{business_unite.timing_from1}}
+                        <b>To</b> {{business_unite.timing_to1}}</span>  {% if business_unite.timing_from2 %}<b>And</b> :
+                        <span>{{business_unite.timing_from2}} <b>To</b> {{business_unite.timing_to2}}</span>{% endif %}</p>
+                    {% endif %}
+
+
+                    {% if business_unite.holiday %}
+                    <p class="card-text"><b>Holiday:</b> {{business_unite.holiday}}</p>
+                    {% endif %}
+
+
+
+                    {% if business_unite.website %}
+                    <p class="card-text"><b>Website:</b>
+                        &nbsp; &nbsp; &nbsp; &nbsp;<a href="{{business_unite.website}}" target="_blank">View Website</a></p>
+                    {% endif %}
+
+                    {% if business_unite.email %}
+                    <p class="card-text"><b>Email</b> {{business_unite.email}}</p>
+                    {% endif %}
+
+                    {% if business_unite.owner_name %}
+                    <p class="card-text"><b>Owner Name:</b> {{business_unite.owner_name}}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+{% endblock %}
