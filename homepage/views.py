@@ -6,6 +6,8 @@ from temple.models import Temple
 
 from .models import LookupField
 
+from education_sector.models import Type as EducationType
+from education_sector.models import EducationSector
 
 # Create your views here.
 
@@ -13,6 +15,7 @@ def homepage(request, id=1):
     store_type = StoreType.objects.all()
     business_type = BusinessType.objects.all()
     health_type = HealthType.objects.all()
+    education_type = EducationType.objects.all()
     business_data = business.objects.filter(business_type_id=id)
     try:
         banner = LookupField.objects.get(code='main banner')
@@ -25,10 +28,36 @@ def homepage(request, id=1):
         'business_type': business_type,
         'health_type': health_type,
         'banner_img': banner_img,
-        'business': business_data
+        'business': business_data,
+        'education_type': education_type,
     }
 
     return render(request, 'index.html', context)
+
+
+def education(request, id):
+    store_type = StoreType.objects.all()
+    business_type = BusinessType.objects.all()
+    health_type = HealthType.objects.all()
+    education_type = EducationType.objects.all()
+    education = EducationSector.objects.filter(type_id=id)
+
+    try:
+        banner = LookupField.objects.get(code='main banner')
+        banner_img = banner.image.url
+    except:
+        banner_img = ''
+
+    context = {
+        'store_type': store_type,
+        'banner_img': banner_img,
+        'business_type': business_type,
+        'health_type': health_type,
+        'education': education,
+        'education_type': education_type,
+    }
+
+    return render(request, 'education.html', context)
 
 
 def visiting(request, id):
@@ -107,3 +136,5 @@ def business_unite(request, id):
     }
 
     return render(request, 'business_unit.html', context)
+
+

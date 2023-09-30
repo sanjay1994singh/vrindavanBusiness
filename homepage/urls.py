@@ -7,6 +7,7 @@ urlpatterns = [
     path('temple/', views.temple, name='homepage'),
     path('<int:id>/', views.homepage, name='homepage'),
     path('visiting/<int:id>/', views.visiting, name='visiting'),
+    path('education/<int:id>/', views.education, name='education'),
     path('hospital/<int:id>/', views.hospital, name='hospital'),
     path('business-unite/<int:id>/', views.business_unite, name='business_unite'),
 ]
