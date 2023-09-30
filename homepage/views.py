@@ -8,6 +8,7 @@ from .models import LookupField
 
 from education_sector.models import Type as EducationType
 from education_sector.models import EducationSector
+from adhyatm.models import AdhyatmType, AdhyatmJagat
 
 # Create your views here.
 
@@ -16,6 +17,7 @@ def homepage(request, id=1):
     business_type = BusinessType.objects.all()
     health_type = HealthType.objects.all()
     education_type = EducationType.objects.all()
+    adhyatm_type = AdhyatmType.objects.all()
     business_data = business.objects.filter(business_type_id=id)
     try:
         banner = LookupField.objects.get(code='main banner')
@@ -30,6 +32,7 @@ def homepage(request, id=1):
         'banner_img': banner_img,
         'business': business_data,
         'education_type': education_type,
+        'adhyatm_type': adhyatm_type,
     }
 
     return render(request, 'index.html', context)
@@ -58,6 +61,31 @@ def education(request, id):
     }
 
     return render(request, 'education.html', context)
+
+
+def adhyatm(request, id):
+    store_type = StoreType.objects.all()
+    business_type = BusinessType.objects.all()
+    health_type = HealthType.objects.all()
+    education_type = EducationType.objects.all()
+    adhyatm = AdhyatmJagat.objects.filter(type_id=id)
+
+    try:
+        banner = LookupField.objects.get(code='main banner')
+        banner_img = banner.image.url
+    except:
+        banner_img = ''
+
+    context = {
+        'store_type': store_type,
+        'banner_img': banner_img,
+        'business_type': business_type,
+        'health_type': health_type,
+        'adhyatm': adhyatm,
+        'education_type': education_type,
+    }
+
+    return render(request, 'adhyatm.html', context)
 
 
 def visiting(request, id):

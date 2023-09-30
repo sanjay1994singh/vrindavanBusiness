@@ -70,11 +70,12 @@
                     <li class="btn nav-item dropdown">
                         <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
                            role="button" style="color:white;">
-                            Religious organizations
+                            Adhyatm Jagat
                         </a>
                         <ul aria-labelledby="navbarDropdown" class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                             {% for adhyatm_type in adhyatm_type %}
+                            <li><a class="dropdown-item" href="/adhyatm/{{adhyatm_type.id}}/">{{adhyatm_type.type}}</a></li>
+                            {% endfor %}
                         </ul>
                     </li>
 

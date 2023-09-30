@@ -47,37 +47,37 @@
 {% block content %}
 <div class="container-fluid">
     <div class="row">
-        {% for education in education %}
+        {% for temple in temple %}
         <div class="card col-lg-12 mb-2">
             <h5 class="card-header"></h5>
             <div class="d-flex">
                 <div class="col-lg-3 border">
-                    <img alt="Room 1" class="card-img-top" src="{% if education.main_image %}{{education.main_image.url}}{% endif %}">
+                    <img alt="Room 1" class="card-img-top" src="{% if temple.main_img %}{{temple.main_img.url}}{% endif %}">
                 </div>
 
                 <div class="card-body col-lg-3 border">
-                    <h5 class="card-title">{{education.name}}</h5>
-                    <p class="card-text"><b>Address:</b> {{education.address}}</p>
+                    <h5 class="card-title">{{adhyatm.name}}</h5>
+                    <p class="card-text"><b>Address:</b> {{adhyatm.address}}</p>
 
-                    {% if education.contact_number %}
-                    <p class="card-text"><b>Contact Number:</b> {{education.contact_number}}</p>
+                    {% if adhyatm.contact_number %}
+                    <p class="card-text"><b>Contact Number:</b> {{adhyatm.contact_number}}</p>
+                    {% endif %}
+
+                    {% if adhyatm.contact_person %}
+                    <p class="card-text"><b>Contact person:</b> {{adhyatm.contact_person}}</p>
                     {% endif %}
 
                 </div>
 
                 <div class="card-body col-lg-3 border">
 
-                    {% if education.email %}
-                    <p class="card-text"><b>Email:</b> {{education.email}}</p>
-                    {% endif %}
-
-                    {% if education.website %}
+                    {% if adhyatm.website %}
                     <p class="card-text"><b>Website:</b>
-                        &nbsp; &nbsp; &nbsp; &nbsp;<a href="{{education.website}}" target="_blank">View Website</a></p>
+                        &nbsp; &nbsp; &nbsp; &nbsp;<a href="{{adhyatm.website}}" target="_blank">View Website</a></p>
                     {% endif %}
 
-                    {% if education.email %}
-                    <p class="card-text"><b>Email</b> {{education.email}}</p>
+                    {% if adhyatm.email %}
+                    <p class="card-text"><b>Email</b> {{temple.email}}</p>
                     {% endif %}
                 </div>
             </div>
