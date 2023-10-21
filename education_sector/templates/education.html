@@ -41,6 +41,8 @@
     }
 
 
+
+
 </style>
 {% endblock %}
 
@@ -52,7 +54,28 @@
             <h5 class="card-header"></h5>
             <div class="d-flex">
                 <div class="col-lg-3 border">
-                    <img alt="Room 1" class="card-img-top" src="{% if education.main_image %}{{education.main_image.url}}{% endif %}">
+                    <div class="row">
+                        <div class="col-lg-12 mb-3">
+                            <img class="card-img-top"
+                                 src="{% if education.main_image %}{{education.main_image.url}}{% endif %}">
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <img class="card-img-top"
+                                         src="{% if education.other_image1 %}{{education.other_image1.url}}{% endif %}">
+                                </div>
+                                <div class="col-lg-4">
+                                    <img class="card-img-top"
+                                         src="{% if education.other_image2 %}{{education.other_image2.url}}{% endif %}">
+                                </div>
+                                <div class="col-lg-4">
+                                    <img class="card-img-top"
+                                         src="{% if education.other_image3 %}{{education.other_image3.url}}{% endif %}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="card-body col-lg-3 border">
@@ -61,6 +84,30 @@
 
                     {% if education.contact_number %}
                     <p class="card-text"><b>Contact Number:</b> {{education.contact_number}}</p>
+                    {% endif %}
+
+                    {% if education.affilliated_by %}
+                    <p class="card-text"><b>Affilliated_by:</b> {{education.affilliated_by}}</p>
+                    {% endif %}
+
+                    {% if education.approved_by %}
+                    <p class="card-text"><b>Approved by:</b> {{education.approved_by}}</p>
+                    {% endif %}
+
+                    {% if education.medium_language %}
+                    <p class="card-text"><b>Medium language:</b> {{education.medium_language}}</p>
+                    {% endif %}
+
+                    {% if education.subject %}
+                    <p class="card-text"><b>subject:</b> {{education.subject}}</p>
+                    {% endif %}
+
+                    {% if education.owner_name %}
+                    <p class="card-text"><b>Owner name:</b> {{education.owner_name}}</p>
+                    {% endif %}
+
+                    {% if education.owner_contact %}
+                    <p class="card-text"><b>Owner contact:</b> {{education.owner_contact}}</p>
                     {% endif %}
 
                 </div>
@@ -76,9 +123,30 @@
                         &nbsp; &nbsp; &nbsp; &nbsp;<a href="{{education.website}}" target="_blank">View Website</a></p>
                     {% endif %}
 
-                    {% if education.email %}
-                    <p class="card-text"><b>Email</b> {{education.email}}</p>
+                    {% if education.timing %}
+                    <p class="card-text"><b>Timing:</b> {{education.timing}}</p>
                     {% endif %}
+
+                    {% if education.educattion_class %}
+                    <p class="card-text"><b>Educattion class:</b> {{education.educattion_class}}</p>
+                    {% endif %}
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            {% if education.courses_list %}
+                            <p class="card-text"><b>Courses list:</b>
+                            <pre>{{education.courses_list}}</pre>
+                            </p>
+                            {% endif %}
+                        </div>
+                        <div class="col-lg-6">
+                            {% if education.facilities %}
+                            <p class="card-text"><b>Facilities:</b>
+                            <pre>{{education.facilities}}</pre>
+                            </p>
+                            {% endif %}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
