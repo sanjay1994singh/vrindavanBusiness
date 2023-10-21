@@ -85,7 +85,6 @@ DATABASES = {
         'PASSWORD': 'qwerty123',
         'HOST': 'localhost',
         'PORT': '3306',
-
     }
 }
 
