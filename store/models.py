@@ -21,7 +21,7 @@ class Store(models.Model):
     website = models.TextField(null=True, blank=True)
     email = models.EmailField(null=True, blank=True)
     contact_number = models.CharField(max_length=20, null=True, blank=True)
-    phone = models.CharField(max_length=20, null=True)
+    phone = models.CharField(max_length=20, null=True, blank=True)
 
     timing_from1 = models.CharField(max_length=50, null=True, blank=True)
     timing_to1 = models.CharField(max_length=50, null=True, blank=True)

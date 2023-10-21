@@ -1,8 +1,14 @@
 from django.db import models
 
+class Type(models.Model):
+    type = models.CharField(max_length=50, null=True)
+
+    def __str__(self):
+        return self.type
 
 # Create your models here.
 class EducationSector(models.Model):
+    type = models.ForeignKey(Type, on_delete=models.PROTECT)
     name = models.CharField(max_length=1000, null=True)
     address = models.TextField(null=True)
     description = models.TextField(null=True, blank=True)
@@ -16,7 +22,7 @@ class EducationSector(models.Model):
     courses_list = models.TextField(null=True, blank=True)
     facilities = models.TextField(null=True, blank=True)
     medium_language = models.CharField(max_length=100, null=True, blank=True)
-    school_class = models.CharField(max_length=100, null=True, blank=True)
+    educattion_class = models.CharField(max_length=100, null=True, blank=True)
     subject = models.CharField(max_length=500, null=True, blank=True)
     owner_name = models.CharField(max_length=100, null=True, blank=True)
     owner_contact = models.CharField(max_length=100, null=True, blank=True)

@@ -54,6 +54,13 @@ class business(models.Model):
     room_img3 = models.ImageField(upload_to='business_image', null=True, default=None, blank=True)
     room_img4 = models.ImageField(upload_to='business_image', null=True, default=None, blank=True)
 
+    room_img5 = models.ImageField(upload_to='business_image', null=True, default=None, blank=True)
+    room_img6 = models.ImageField(upload_to='business_image', null=True, default=None, blank=True)
+    room_img7 = models.ImageField(upload_to='business_image', null=True, default=None, blank=True)
+    room_img8 = models.ImageField(upload_to='business_image', null=True, default=None, blank=True)
+    room_img9 = models.ImageField(upload_to='business_image', null=True, default=None, blank=True)
+    room_img10 = models.ImageField(upload_to='business_image', null=True, default=None, blank=True)
+
     intercome = models.BooleanField(null=True, default=False, blank=True)
     room_service = models.BooleanField(null=True, default=False, blank=True)
     power_backup_ac = models.BooleanField(null=True, default=False, blank=True)

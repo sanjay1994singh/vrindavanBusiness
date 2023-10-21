@@ -53,11 +53,25 @@
             <div class="d-flex">
                 <div class="col-lg-3 border">
                     <img alt="Room 1" class="card-img-top" src="{% if business_unite.main_image %}{{business_unite.main_image.url}}{% endif %}">
+
+                    <div class="row mx-auto mt-2">
+
+                        <div class="col-lg-6">
+                            <img alt="Room 1" class="card-img-top" src="{% if business_unite.main_image %}{{business_unite.main_image.url}}{% endif %}">
+                        </div>
+
+                        <div class="col-lg-6">
+                            <img alt="Room 1" class="card-img-top" src="{% if business_unite.main_image %}{{business_unite.main_image.url}}{% endif %}">
+                        </div>
+
+                    </div>
+
                 </div>
 
                 <div class="card-body col-lg-3 border">
                     <h5 class="card-title">{{business_unite.store_name}}</h5>
                     <p class="card-text"><b>Address:</b> {{business_unite.address}}</p>
+                    <p class="card-text"><b>Description:</b> {{business_unite.description}}</p>
 
                     {% if business_unite.contact_number %}
                     <p class="card-text"><b>Contact Number:</b> {{business_unite.contact_number}}</p>
@@ -74,7 +88,6 @@
                     {% if business_unite.darshan_time_winter %}
                     <p class="card-text"><b>Darshan time winter:</b> {{business_unite.darshan_time_winter}}</p>
                     {% endif %}
-
 
                 </div>
 
